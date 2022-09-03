@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script type="text/javascript">
+        async function asyncCall() {
+            var btc_call = await fetch("https://api.coinbase.com/v2/prices/BTC-USD/spot");
+            var btc_data = await btc_call.json(); 
+            var yfi_call = await fetch("https://api.coinbase.com/v2/prices/YFI-USD/spot");
+            var yfi_data = await yfi_call.json(); 
+            if (yfi_data.data.amount/btc_data.data.amount < 0.98) {
+                console.log("nope")
+                document.getElementsByClassName("target")[0].innerHTML = " IS NOT EQUAL TO ";
+                document.getElementsByClassName("target2")[0].innerHTML = "<br> 😭😭😭😭 ";
+                document.title = " 1 YFI != 1 BTC 😭😭"
+            } else {
+                document.getElementsByClassName("target")[0].innerHTML = " IS EQUAL TO ";
+                document.getElementsByClassName("target2")[0].innerHTML = "<br> 😂😂😂 ";
+                document.title = " 1 YFI == 1 BTC 😂😂"
+            }
+        }
+        asyncCall();
+    </script>
+<body>
+    <div class="d-flex justify-content-center">
+        1 YFI <span class="target"> </span> 1 BTC.  <span class="target2"> </span> 
+    </div>  <br><br><br><br><br><br><br><br><br><br>
+    <div class="d-flex justify-content-center">
+        <img src="https://lh3.googleusercontent.com/hnyMrYtr76Z-p_OX2Ywxk0Davvd9-hyfBkEiK-u0CL4JVyIRFc6d63O2VhdyA4X0e_cft4TQRoXnLNMlmR5c7TIGrXsUhbFcqZ8u=w1400-k" height="400" width="400">
+    </div>
+</body>
+</html>
