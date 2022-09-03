@@ -9,11 +9,11 @@
             var yfi_data = await yfi_call.json(); 
             if (yfi_data.data.amount/btc_data.data.amount < 0.98) {
                 console.log("nope")
-                document.getElementsByClassName("target")[0].innerHTML = " IS NOT EQUAL TO ";
+                document.getElementsByClassName("target")[0].innerHTML = "&nbsp; IS NOT EQUAL TO  &nbsp;";
                 document.getElementsByClassName("target2")[0].innerHTML = "<br> 😭😭😭😭 ";
                 document.title = " 1 YFI != 1 BTC 😭😭"
             } else {
-                document.getElementsByClassName("target")[0].innerHTML = " IS EQUAL TO ";
+                document.getElementsByClassName("target")[0].innerHTML = "&nbsp; IS EQUAL TO &nbsp;";
                 document.getElementsByClassName("target2")[0].innerHTML = "<br> 😂😂😂 ";
                 document.title = " 1 YFI == 1 BTC 😂😂"
             }
